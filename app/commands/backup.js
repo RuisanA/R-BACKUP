@@ -32,7 +32,7 @@ module.exports = {
     const configData = fs.readFileSync(configPath, 'utf8');
     const config = JSON.parse(configData);
     
-    if((!config.admin_list.includes(interaction.user.id) && !config.white_list.includes(interaction.user.id)) || !interaction.member.permissions.has("ADMINISTRATOR")) {
+    if((!config.admin_list.includes(interaction.user.id) && !config.white_list.includes(interaction.user.id)) && !config.Standard.includes(interaction.user.id)) || !interaction.member.permissions.has("ADMINISTRATOR")) {
       return interaction.reply({ content: "コマンドの実行権限がありません", ephemeral: true });
     }
 
