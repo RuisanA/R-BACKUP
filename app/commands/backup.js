@@ -31,10 +31,6 @@ module.exports = {
     const configPath = './config.json';
     const configData = fs.readFileSync(configPath, 'utf8');
     const config = JSON.parse(configData);
-
-    if((!config.Standard.includes(interaction.user.id) || !interaction.member.permissions.has("ADMINISTRATOR")) {
-      return interaction.reply({ content: "コマンドの実行権限がありません", ephemeral: true });
-    }
     
     if((!config.admin_list.includes(interaction.user.id) && !config.white_list.includes(interaction.user.id)) || !interaction.member.permissions.has("ADMINISTRATOR")) {
       return interaction.reply({ content: "コマンドの実行権限がありません", ephemeral: true });
