@@ -212,17 +212,6 @@ async function refreshTokens() {
   });
 }
 
-client.on("messageCreate", async (message) => {
-  if (message.content === "!refresh5") {
-    if (message.author.id !== "1178414826184265819") {
-      return message.channel.send("このコマンドを実行する権限がありません。");
-    }
-
-    await refreshTokens();
-    message.channel.send("tokenのリフレッシュが開始されました");
-  }
-});
-
 async function getToken(userId) {
   const filePath = 'tokens.json';
   const data = fs.readFileSync(filePath, 'utf8');
