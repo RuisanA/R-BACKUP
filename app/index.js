@@ -695,13 +695,4 @@ client.on('messageCreate', async (message) => {
   message.reply(`アナウンス送信完了。\n成功: ${successCount}件\n失敗: ${failCount}件`);
 });
 
-client.on("messageCreate", async (message) => {
-  if (message.author.bot) return;
-
-  // 「おはよう」に反応
-  if (message.content === "おはよう") {
-    return message.reply("おはよう");
-  }
-});
-
 client.login(process.env.DISCORD_BOT_TOKEN);
